@@ -49,7 +49,7 @@ class TodoController {
     })
   }
   static deleteTodo(req, res){
-    console.log(req.body.todoId);
+    // console.log(req.body.todoId);
     Todo.deleteOne({ _id: req.body.todoId })
     .then(result=>{
       res.status(200).json('task successfully deleted')
