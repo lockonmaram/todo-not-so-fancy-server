@@ -2,7 +2,7 @@ const Todo = require('../models/todo')
 
 class TodoController {
   static getTodo(req, res){
-    Todo.find({ userId: req.params.id })
+    Todo.find({ userId: req.params.userId })
     .then(todos=>{
       // console.log(todos);
       res.status(200).json(todos)
@@ -15,7 +15,7 @@ class TodoController {
     Todo.create({
       task: req.body.task,
       priority: req.body.priority,
-      userId: req.params.id
+      userId: req.params.userId
     })
     .then(todo=>{
       res.status(200).json(todo)
